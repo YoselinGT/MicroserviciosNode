@@ -1,4 +1,4 @@
-import {check} from "../../../auth/index.js";
+const {check} = require( "../../../auth/index.js");
 const checkAuth = (action) => {
     const middleware = (req, res, next) => {
         switch (action){
@@ -19,4 +19,4 @@ const checkAuth = (action) => {
     return middleware;
 }
 
-export default checkAuth
+module.exports = checkAuth

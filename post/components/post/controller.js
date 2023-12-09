@@ -17,4 +17,4 @@ const init = (injectedStore) => {
     }
 }
 
-export default init;
+module.exports = init;

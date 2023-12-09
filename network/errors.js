@@ -1,4 +1,4 @@
-import {error} from './response.js'
+const {error} = require( './response.js');
 
 const errorHandler = (err,req,res,next) => {
     console.error('[error]', err)
@@ -9,4 +9,4 @@ const errorHandler = (err,req,res,next) => {
     error(req,res,message,status);
 }
 
-export default errorHandler;
+module.exports = errorHandler;

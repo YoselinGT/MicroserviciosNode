@@ -1,8 +1,7 @@
-import express from "express";
-
+const express = require( "express");
 const router = express.Router();
-import {success, error} from "./../../../network/response.js";
-import controller from './index.js';
+const {success, error} = require( "./../../../network/response.js");
+const controller = require( './index.js');
 
 
 router.post('/login', (req, res,next) => {
@@ -16,4 +15,4 @@ router.post('/login', (req, res,next) => {
 
 
 })
-export default router;
+module.exports = router;

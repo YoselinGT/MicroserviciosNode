@@ -8,4 +8,4 @@ const err = (message, code) => {
     return e;
 }
 
-export default err;
+module.exports = err;

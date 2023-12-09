@@ -1,6 +1,6 @@
-import createRemoteDB from "./remote.js";
-import config from "../config.js"
+const createRemoteDB = require( "./remote.js");
+const config = require( "../config.js");
 
 const store =  new createRemoteDB(config.mysqlService.host,config.mysqlService.port)
 
-export default store;
+module.exports = store;

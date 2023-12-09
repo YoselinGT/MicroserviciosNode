@@ -1,14 +1,10 @@
-import request from 'request'
+const request = require( 'request');
 function createRemoteDB(host,port){
     const URL = 'http://'+host+':'+port;
 
     function list(table){
         return req('GET',table);
     }
-    //function get(table, id){}
-    //function upsert(table, data);
-    //function query(table, query, join);
-
     function req(method, table, data){
         let url = URL+'/'+table;
         let body = '';
@@ -36,4 +32,4 @@ function createRemoteDB(host,port){
     return {list}
 }
 
-export default createRemoteDB
+module.exports = createRemoteDB

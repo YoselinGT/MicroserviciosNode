@@ -29,4 +29,4 @@ const query = async (table, q) => {
 }
 
 
-export {list,get,upsert,query}
+module.exports = {list,get,upsert,query}

@@ -1,14 +1,16 @@
-import init from './controller.js'
-import config from './../../../config.js'
+const init = require('./controller.js');
+const config = require('./../../../config.js');
 
-let store;
+let store, cache;
 if (config.remoteDB === true) {
     store = require('./../../../store/remote-mysql.js');
+    cache = require('./../../../store/remote-cache.js');
 } else {
     store = require('./../../../store/mysql.js');
+    cache = require('./../../../store/redis.js');
 }
 
 
-const user = init(store)
+const user = init(store,cache)
 
-export default user;
+module.exports = user;

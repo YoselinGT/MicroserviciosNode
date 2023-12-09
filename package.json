@@ -1,6 +1,5 @@
 {
   "name": "microserviciosnode",
-  "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -20,6 +19,7 @@
     "mariadb": "^3.2.2",
     "mysql": "^2.18.1",
     "nanoid": "^5.0.2",
+    "redis": "^4.6.11",
     "request": "^2.88.2",
     "swagger-ui-express": "^5.0.0"
   },

@@ -1,6 +1,5 @@
-import bcryp from 'bcrypt'
-import {sign} from "./../../../auth/index.js";
-import err from "../../../utils/error.js";
+const {sign} = require('../../../auth/index.js');
+const err = require('../../../utils/error.js');
 
 
 const TABLA = 'auth';
@@ -47,4 +46,4 @@ const init = (injectedStore) => {
     }
 }
 
-export default init;
+module.exports = init;

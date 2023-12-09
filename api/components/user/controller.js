@@ -1,17 +1,30 @@
-import auth from "../auth/index.js";
-import bcryp from "bcrypt";
-
+const auth = require( "../auth/index.js");
+const bcryp = require( "bcrypt");
 const TABLA = 'user';
 
-const init = (injectedStore) => {
+const init = (injectedStore, injectedCache) => {
 
     let store = injectedStore;
-
+    let cache = injectedCache;
     if(!store){
         store = require('../../../store/dummy.js');
     }
-    const list= () =>{
-        return store.list(TABLA)
+
+    if(!cache){
+        cache = require('../../../store/dummy.js');
+    }
+    const list= async () =>{
+        let users = await cache.list(TABLA);
+
+        if(!users){
+            console.log("No estaba en caché, Bucando en DB")
+            users = store.list(TABLA);
+            cache.upsert(TABLA,users)
+        } else {
+            console.log("Nos traemos datos de cache")
+        }
+
+        return users;
     }
 
     const get = (id) =>{
@@ -62,4 +75,4 @@ const init = (injectedStore) => {
     }
 }
 
-export default init;
+module.exports = init;

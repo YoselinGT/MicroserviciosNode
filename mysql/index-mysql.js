@@ -1,8 +1,8 @@
-import express from "express";
-import bodyParser from "body-parser";
-import router from './network.js'
+const express = require( "express");
+const bodyParser = require( "body-parser");
+const router = require( './network.js');
 
-import config from './../config.js'
+const config = require(  './../config.js');
 
 const app = express();
 

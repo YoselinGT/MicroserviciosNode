@@ -1,4 +1,5 @@
-import dotenv from "dotenv";
+const dotenv = require("dotenv");
+
 dotenv.config();
 
 const config = {
@@ -18,12 +19,22 @@ const config = {
         port: process.env.MYSQL_SRV_PORT || 3001,
         host: process.env.MYSQL_SRV_HOST || 'localhost'
     },
+    cacheService: {
+        port: process.env.CACHE_SRV_PORT || 3003,
+        host: process.env.CACHE_SRV_HOST || 'localhost'
+    },
     post: {
         port: process.env.PORT_POST || 3002,
     },
-    remoteDB: process.env.REMOTE_DB || false
+    remoteDB: process.env.REMOTE_DB || false,
+    redis: {
+        host: process.env.REDIS_HOST || 'redis-14265.c267.us-east-1-4.ec2.cloud.redislabs.com',
+        port: process.env.REDIS_PORT || '14265',
+        password: process.env.REDIS_PASSWORD || 'lnZJKfNXlj2NugZHKDKoz3EGBqMMCBwj',
+        user: process.env.REDIS_PASSWORD || 'default'
+    }
 }
 
 
 
-export default config;
+module.exports = config;

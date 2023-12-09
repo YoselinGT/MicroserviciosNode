@@ -1,8 +1,8 @@
-import express from "express";
+const express = require("express");
 
 const router = express.Router();
-import {success, error} from "./../network/response.js";
-import {list, get, upsert} from "../store/mysql.js";
+const {success, error} = require( "./../network/response.js");
+const {list, get, upsert} = require( "../store/mysql.js");
 
 
 router.get('/:tabla', (req, res, next) => {
@@ -40,4 +40,4 @@ router.put('/:tabla', (req, res, next) => {
         })
         .catch(next)
 })
-export default router;
+module.exports = router;

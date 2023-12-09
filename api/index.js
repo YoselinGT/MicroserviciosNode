@@ -1,13 +1,13 @@
-import express from 'express'
+const express = require( 'express');
 const app = express();
-import config from './../config.js'
-import user from './components/user/network.js'
-import auth from './components/auth/network.js'
-import bodyParser from 'body-parser'
-import swaggerUi from 'swagger-ui-express'
-import error from "../network/errors.js";
+const config = require( './../config.js')
+const user = require( './components/user/network.js');
+const auth = require( './components/auth/network.js');
+const bodyParser = require( 'body-parser');
+const swaggerUi = require( 'swagger-ui-express');
+const error = require( "../network/errors.js");
 
-import swaggerDoc from './swagger.json' assert { type: 'json' };
+const swaggerDoc = require('./swagger.json');
 
 app.use(bodyParser.json())
 

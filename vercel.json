@@ -1,5 +1,17 @@
 {
   "version": 2,
+  "env": {
+    "NODE_ENV": "production",
+    "MYSQL_DB_HOST": "127.0.0.1",
+    "MYSQL_DB_PORT": "3001",
+    "MYSQL_DB_USER": "root",
+    "MYSQL_DB_PASSWORD": "admin123",
+    "MYSQL_DATABASE": "social",
+    "MYSQL_SERVICE_HOST": "localhost",
+    "SENTRY_ID": "",
+    "SENTRY_DNS": "",
+    "AUTH_JWT_SECRET": ""
+  },
   "builds": [
     {
       "src": "api/index.js",

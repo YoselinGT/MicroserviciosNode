@@ -1,6 +1,7 @@
-import init from './controller.js'
-import * as store from './../../../store/mysql.js'
+const init = require ('./controller.js');
+const store = require ('./../../../store/mysql.js');
+
 
 const auth = init(store)
 
-export default auth;
+module.exports = auth;

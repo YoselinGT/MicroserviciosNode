@@ -1,9 +1,9 @@
-import express from "express";
+const express = require("express");
 
 const router = express.Router();
-import secure from './secure.js'
-import {success, error} from "./../../../network/response.js";
-import user from './index.js';
+const secure = require('./secure.js');
+const {success, error} = require("./../../../network/response.js");
+const user = require( './index.js');
 
 
 router.get('/', (req, res,next) => {
@@ -70,4 +70,4 @@ router.post('/:id/following',
     })
 
 
-export default router;
+module.exports = router;

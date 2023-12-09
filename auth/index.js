@@ -1,6 +1,6 @@
-import jwt from 'jsonwebtoken'
-import config from "../config.js";
-import err from "../utils/error.js";
+const jwt = require( 'jsonwebtoken');
+const config = require( "../config.js");
+const err = require( "../utils/error.js");
 
 const secreto = config.jwt.secret;
 const sign = (data)  => {
@@ -46,4 +46,4 @@ const check = {
 
 }
 
-export {sign,check}
+module.exports = {sign,check}

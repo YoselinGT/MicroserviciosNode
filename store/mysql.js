@@ -1,5 +1,5 @@
-import mariadb from 'mariadb';
-import config from '../config.js';
+const mariadb = require(  'mariadb');
+const config = require(  '../config.js');
 
 const dbconfig = {
     host: config.mysql.host,
@@ -133,4 +133,4 @@ const query = async (table, data, join) => {
     }
 }
 
-export {get, list, upsert, query}
+module.exports = {get, list, upsert, query}
